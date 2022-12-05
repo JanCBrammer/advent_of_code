@@ -1,0 +1,14 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Python 3",
+	"image": "mcr.microsoft.com/devcontainers/python:3.11",
+	"extensions": [
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"ms-python.black-formatter",
+		"KevinRose.vsc-python-indent",
+		"bungcip.better-toml"
+	],
+	"postCreateCommand": "pip install black flake8 pytest"
+}
