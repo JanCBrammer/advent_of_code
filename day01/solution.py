@@ -1,5 +1,6 @@
 """
 --- Day 1: Not Quite Lisp ---
+
 Santa was hoping for a white Christmas, but his weather machine's "snow" function is powered by stars, and he's fresh out! To save Christmas, he needs you to collect fifty stars by December 25th.
 
 Collect stars by helping Santa solve puzzles. Two puzzles will be made available on each day in the Advent calendar; the second puzzle is unlocked when you complete the first. Each puzzle grants one star. Good luck!
@@ -22,6 +23,7 @@ For example:
 To what floor do the instructions take Santa?
 
 --- Part Two ---
+
 Now, given the same instructions, find the position of the first character that causes him to enter the basement (floor -1). The first character in the instructions has position 1, the second character has position 2, and so on.
 
 For example:
@@ -37,6 +39,7 @@ from pathlib import Path
 
 
 def find_floor(directions: str) -> int:
+
     floor = 0
     for direction in directions:
         if direction == "(":
@@ -48,6 +51,7 @@ def find_floor(directions: str) -> int:
 
 
 def find_basement_entrance_direction(directions: str) -> int:
+
     floor = 0
     for i, direction in enumerate(directions):
         if direction == "(":
@@ -55,6 +59,7 @@ def find_basement_entrance_direction(directions: str) -> int:
         elif direction == ")":
             floor -= 1
         if floor == -1:
+
             return i + 1
 
 
@@ -80,5 +85,6 @@ def solve_part2(input_path: str):
 
 
 if __name__ == "__main__":
-    solve_part1("day01/input.txt")
-    solve_part2("day01/input.txt")
+
+    solve_part1("input.txt")
+    solve_part2("input.txt")
