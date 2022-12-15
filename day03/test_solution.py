@@ -1,5 +1,5 @@
 import pytest
-import solution
+from . import solution
 
 
 @pytest.mark.parametrize(
@@ -19,7 +19,7 @@ def test_track_visited_houses(directions: str, visited_houses: set[tuple[int, in
     "directions, visited_houses",
     [
         ("^v", {(0, -1), (0, 0), (0, 1)}),
-        ("^>v<", {(0, -1), (0, 0), (0, 1)}),
+        ("^>v<", {(0, 0), (0, 1), (1, 0)}),
         (
             "^v^v^v^v^v",
             {
@@ -38,8 +38,8 @@ def test_track_visited_houses(directions: str, visited_houses: set[tuple[int, in
         ),
     ],
 )
-def test_track_visited_houses_robotsanta(
+def test_track_visited_houses_robosanta(
     directions: str, visited_houses: set[tuple[int, int]]
 ):
 
-    assert solution.track_visited_houses_robotsanta(directions) == visited_houses
+    assert solution.track_visited_houses_robosanta(directions) == visited_houses

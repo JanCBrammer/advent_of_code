@@ -63,15 +63,15 @@ def track_visited_houses(directions: str) -> set[tuple[int, int]]:
     return visited_houses
 
 
-def track_visited_houses_robotsanta(directions: str) -> set[tuple[int, int]]:
+def track_visited_houses_robosanta(directions: str) -> set[tuple[int, int]]:
 
     current_location_santa = {"x": 0, "y": 0}
-    current_location_robotsanta = {"x": 0, "y": 0}
+    current_location_robosanta = {"x": 0, "y": 0}
     visited_houses = set([tuple([0, 0])])
 
     for i, direction in enumerate(directions):
         current_location = (
-            current_location_santa if i % 2 == 0 else current_location_robotsanta
+            current_location_santa if i % 2 == 0 else current_location_robosanta
         )
         match direction:
             case "^":
@@ -98,7 +98,7 @@ def solve_part1(input_path: str):
 def solve_part2(input_path: str):
 
     directions = parse_input(input_path)
-    visited_houses = track_visited_houses_robotsanta(directions)
+    visited_houses = track_visited_houses_robosanta(directions)
 
     print(f"Part 2:\n{len(visited_houses)} received at least one present.\n")
 

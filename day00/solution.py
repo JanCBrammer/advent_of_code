@@ -11,6 +11,11 @@ def parse_input(input_path: str) -> str:
     return Path(input_path).read_text()
 
 
+def find_bar(foo: str) -> int:
+
+    return 42
+
+
 def solve_part1(input_path: str):
 
     print(f"Part 1:\n...\n")
