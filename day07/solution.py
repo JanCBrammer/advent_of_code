@@ -162,5 +162,9 @@ def solve(input_path: str):
 
 if __name__ == "__main__":
 
-    print(f"Part 1:\nWire 'a' receives input {solve('input_part1.txt')}.\n")
-    print(f"Part 1:\nWire 'a' receives input {solve('input_part2.txt')}.\n")
+    input_dir = Path(__file__).parts[-2]
+    input_path_part1 = f"{input_dir}/input_part1.txt"
+    input_path_part2 = f"{input_dir}/input_part2.txt"
+
+    print(f"Part 1:\nWire 'a' receives input {solve(input_path_part1)}.\n")
+    print(f"Part 1:\nWire 'a' receives input {solve(input_path_part2)}.\n")

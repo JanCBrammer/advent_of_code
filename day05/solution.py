@@ -123,9 +123,11 @@ def count_nice_strings(input_path: str, rules: tuple[callable]) -> int:
 
 if __name__ == "__main__":
 
+    input_path = f"{Path(__file__).parts[-2]}/input.txt"
+
     print(
-        f"Part 1:\nSanta, {count_nice_strings('input.txt', RULES_PART1)} strings are nice!\n"
+        f"Part 1:\nSanta, {count_nice_strings(input_path, RULES_PART1)} strings are nice!\n"
     )
     print(
-        f"Part 2:\nSanta, {count_nice_strings('input.txt', RULES_PART2)} strings are nice!\n"
+        f"Part 2:\nSanta, {count_nice_strings(input_path, RULES_PART2)} strings are nice!\n"
     )

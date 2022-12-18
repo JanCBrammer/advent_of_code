@@ -86,5 +86,5 @@ def solve_part2(input_path: str):
 
 if __name__ == "__main__":
 
-    solve_part1("input.txt")
-    solve_part2("input.txt")
+    solve_part1(f"{Path(__file__).parts[-2]}/input.txt")
+    solve_part2(f"{Path(__file__).parts[-2]}/input.txt")
