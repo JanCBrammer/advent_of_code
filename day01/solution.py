@@ -53,14 +53,17 @@ def find_floor(directions: str) -> int:
 def find_basement_entrance_direction(directions: str) -> int:
 
     floor = 0
+    basement_entrance_direction = 0
     for i, direction in enumerate(directions):
         if direction == "(":
             floor += 1
         elif direction == ")":
             floor -= 1
         if floor == -1:
+            basement_entrance_direction = i
+            break
 
-            return i + 1
+    return basement_entrance_direction + 1
 
 
 def parse_input(input_path: str) -> str:
