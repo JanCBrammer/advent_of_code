@@ -48,12 +48,13 @@ What is the distance of the longest route?
     find permutation of cities that yields the shortest/longest path
 """
 import itertools
+from collections import defaultdict
 from pathlib import Path
 
 
 def parse_input(input_path: str) -> dict[str, dict[str, int]]:
 
-    city_distances = {}
+    city_distances = defaultdict(dict)
 
     with Path(input_path).open() as file:
         for line in file:
@@ -62,12 +63,7 @@ def parse_input(input_path: str) -> dict[str, dict[str, int]]:
             distance = int(distance.strip())
             city1, city2 = (city.strip() for city in cities.split("to"))
 
-            if city1 not in city_distances:
-                city_distances[city1] = {}
             city_distances[city1].update({city2: distance})
-
-            if city2 not in city_distances:
-                city_distances[city2] = {}
             city_distances[city2].update({city1: distance})
 
     return city_distances
