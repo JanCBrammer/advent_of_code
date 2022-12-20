@@ -4,7 +4,6 @@
             "name": "Python: File",
             "type": "python",
             "request": "launch",
-            "cwd": "${fileDirname}",
             "program": "${file}",
             "justMyCode": true
         }
