@@ -48,13 +48,16 @@ toggle 0,0 through 999,999 would increase the total brightness by 2000000.
 """
 from pathlib import Path
 from itertools import product
+from typing import Generator
 
 
-def parse_input(input_path: str) -> tuple[str, tuple[tuple[int]]]:
+def parse_input(
+    input_path: str,
+) -> Generator[tuple[str, tuple[tuple[int, ...], ...]], None, None]:
 
     with Path(input_path).open() as file:
-        for instruction in file:
-            instruction = instruction.split()
+        for line in file:
+            instruction = line.split()
             if len(instruction) == 5:
                 instruction.pop(0)
             instruction.remove("through")
@@ -66,7 +69,7 @@ def parse_input(input_path: str) -> tuple[str, tuple[tuple[int]]]:
             yield mode, coordinates
 
 
-def parse_coordinates(coordinates: tuple[str, tuple[tuple[int]]]) -> tuple[range]:
+def parse_coordinates(coordinates: tuple[tuple[int, ...], ...]) -> tuple[range, ...]:
 
     rows = range(coordinates[0][0], coordinates[1][0] + 1)
     cols = range(coordinates[0][1], coordinates[1][1] + 1)
@@ -75,7 +78,9 @@ def parse_coordinates(coordinates: tuple[str, tuple[tuple[int]]]) -> tuple[range
 
 
 def change_light_state(
-    mode: str, coordinates: tuple, light_grid: list[list[bool]]
+    mode: str,
+    coordinates: tuple[tuple[int, ...], ...],
+    light_grid: list[list[bool]],
 ) -> list[list[bool]]:
     """Returns mutated light grid."""
 
@@ -92,7 +97,9 @@ def change_light_state(
 
 
 def change_light_brightness(
-    mode: str, coordinates: tuple, light_grid: list[list[bool]]
+    mode: str,
+    coordinates: tuple[tuple[int, ...], ...],
+    light_grid: list[list[bool]],
 ) -> list[list[bool]]:
     """Returns mutated light grid."""
 
@@ -123,7 +130,7 @@ def solve_part1(input_path: str):
 
 def solve_part2(input_path: str):
 
-    light_grid = [[0] * 1000 for _ in range(1000)]
+    light_grid = [[False] * 1000 for _ in range(1000)]
     for mode, coordinates in parse_input(input_path):
         change_light_brightness(mode, coordinates, light_grid)
 
