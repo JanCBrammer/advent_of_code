@@ -43,7 +43,7 @@ def parse_input(input_path: str) -> str:
     return Path(input_path).read_text()
 
 
-def track_visited_houses(directions: str) -> set[tuple[int, int]]:
+def track_visited_houses(directions: str) -> set[tuple[int, ...]]:
 
     current_location = {"x": 0, "y": 0}
     visited_houses = set([tuple([0, 0])])
@@ -63,7 +63,7 @@ def track_visited_houses(directions: str) -> set[tuple[int, int]]:
     return visited_houses
 
 
-def track_visited_houses_robosanta(directions: str) -> set[tuple[int, int]]:
+def track_visited_houses_robosanta(directions: str) -> set[tuple[int, ...]]:
 
     current_location_santa = {"x": 0, "y": 0}
     current_location_robosanta = {"x": 0, "y": 0}
