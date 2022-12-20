@@ -40,6 +40,7 @@ Interactive RegEx playground for Python: https://pythex.org
 
 """
 from pathlib import Path
+from typing import Callable, Iterator
 import re
 
 
@@ -59,7 +60,7 @@ def string_contains_vowels(string: str) -> bool:
     return True
 
 
-def string_free_of_forbidden_substrings(string) -> bool:
+def string_free_of_forbidden_substrings(string: str) -> bool:
 
     match = [substring in string for substring in ["ab", "cd", "pq", "xy"]]
     if any(match):
@@ -95,7 +96,7 @@ RULES_PART2 = (
 )
 
 
-def string_is_nice(string: str, rules: tuple[callable]) -> bool:
+def string_is_nice(string: str, rules: tuple[Callable[[str], bool], ...]) -> bool:
 
     if all(rule(string) for rule in rules):
         return True
@@ -103,7 +104,7 @@ def string_is_nice(string: str, rules: tuple[callable]) -> bool:
     return False
 
 
-def parse_input(input_path: str) -> str:
+def parse_input(input_path: str) -> Iterator[str]:
 
     with Path(input_path).open() as file:
         for line in file:
@@ -111,7 +112,10 @@ def parse_input(input_path: str) -> str:
             yield line
 
 
-def count_nice_strings(input_path: str, rules: tuple[callable]) -> int:
+def count_nice_strings(
+    input_path: str,
+    rules: tuple[Callable[[str], bool], ...],
+) -> int:
 
     n_nice_strings = 0
     for line in parse_input(input_path):
