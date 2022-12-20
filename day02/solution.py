@@ -34,9 +34,10 @@ How many total feet of ribbon should they order?
 from pathlib import Path
 from functools import reduce
 from operator import mul
+from typing import Generator
 
 
-def compute_wrapping_paper_area(present_dimensions: list[int, int, int]) -> int:
+def compute_wrapping_paper_area(present_dimensions: list[int]) -> int:
 
     l, w, h = present_dimensions
     side_areas = [l * w, w * h, h * l]
@@ -45,7 +46,7 @@ def compute_wrapping_paper_area(present_dimensions: list[int, int, int]) -> int:
     return area + min(side_areas)
 
 
-def compute_ribbon_length(present_dimensions: list[int, int, int]) -> int:
+def compute_ribbon_length(present_dimensions: list[int]) -> int:
 
     volume = reduce(mul, present_dimensions)
     present_dimensions.remove(max(present_dimensions))
@@ -54,7 +55,7 @@ def compute_ribbon_length(present_dimensions: list[int, int, int]) -> int:
     return shortest_perimeter + volume
 
 
-def parse_input(input_path: str) -> str:
+def parse_input(input_path: str) -> Generator:
 
     with Path(input_path).open() as file:
         for line in file:
