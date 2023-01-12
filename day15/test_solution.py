@@ -80,9 +80,7 @@ def test_compute_cookie_property_score(
 
 
 def test_compute_cookie_score(ingredient_properties: list[tuple[int, ...]]):
-    assert (
-        solution.compute_cookie_score((44, 56), ingredient_properties[:-1]) == 62842880
-    )
+    assert solution.compute_cookie_score((44, 56), ingredient_properties) == 62842880
 
 
 def test_compute_cookie_score_with_calorie_constraints(
@@ -100,7 +98,7 @@ def test_find_max_cookie_score(ingredient_properties: list[tuple[int, ...]]):
 
     assert (
         solution.find_max_cookie_score(
-            ingredient_properties[:-1], 2, 100, solution.compute_cookie_score
+            ingredient_properties, 2, 100, solution.compute_cookie_score
         )
         == 62842880
     )

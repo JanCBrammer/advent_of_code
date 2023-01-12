@@ -121,7 +121,7 @@ def compute_cookie_score(
     return prod(
         [
             compute_cookie_property_score(composition, property)
-            for property in ingredient_properties
+            for property in ingredient_properties[:-1]
         ]
     )
 
@@ -153,35 +153,28 @@ def find_max_cookie_score(
 
     for composition in compose_teaspoons(n_ingredients, n_tablespoons):
         cookie_score = cookie_scorer(composition, ingredient_properties)
-        if cookie_score > max_cookie_score:
-            max_cookie_score = cookie_score
+        max_cookie_score = max(cookie_score, max_cookie_score)
 
     return max_cookie_score
 
 
-def solve_part1(input_path: str):
-
-    ingredient_properties = parse_input(input_path)[:-1]
-    max_cookie_score = find_max_cookie_score(
-        ingredient_properties, 4, 100, compute_cookie_score
-    )
-
-    print(f"Part 1:\nThe highest possible cookie score is {max_cookie_score}.\n")
-
-
-def solve_part2(input_path: str):
+def solve(input_path: str):
 
     ingredient_properties = parse_input(input_path)
-    max_cookie_score = find_max_cookie_score(
+
+    max_cookie_score_part1 = find_max_cookie_score(
+        ingredient_properties, 4, 100, compute_cookie_score
+    )
+    print(f"Part 1:\nThe highest possible cookie score is {max_cookie_score_part1}.\n")
+
+    max_cookie_score_part2 = find_max_cookie_score(
         ingredient_properties, 4, 100, compute_cookie_score_with_calorie_constraint
     )
-
     print(
-        f"Part 2:\nThe highest possible score for a cookie with 500 calories is {max_cookie_score}.\n"
+        f"Part 2:\nThe highest possible score for a cookie with 500 calories is {max_cookie_score_part2}.\n"
     )
 
 
 if __name__ == "__main__":
 
-    solve_part1(f"{Path(__file__).parts[-2]}/input.txt")
-    solve_part2(f"{Path(__file__).parts[-2]}/input.txt")
+    solve(f"{Path(__file__).parts[-2]}/input.txt")
