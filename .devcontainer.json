@@ -6,7 +6,6 @@
 	"extensions": [
 		"ms-python.python",
 		"ms-python.vscode-pylance",
-		"ms-python.black-formatter",
 		"KevinRose.vsc-python-indent",
 		"bungcip.better-toml"
 	],
