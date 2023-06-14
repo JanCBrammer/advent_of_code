@@ -1,13 +1,25 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/python
+// For format details, see https://containers.dev/implementors/json_reference/.
+// For config options, see the README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
 	"name": "Advent of Code",
 	"image": "mcr.microsoft.com/devcontainers/python:3.11",
-	"extensions": [
-		"ms-python.python",
-		"ms-python.vscode-pylance",
-		"KevinRose.vsc-python-indent",
-		"bungcip.better-toml"
-	],
-	"postCreateCommand": "pip install black flake8 mypy pytest"
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"KevinRose.vsc-python-indent",
+				"streetsidesoftware.code-spell-checker",
+				"GitHub.copilot"
+			],
+			"settings": {
+				"editor.formatOnSave": true,
+				"python.formatting.provider": "black",
+				"python.testing.unittestEnabled": false,
+				"python.testing.pytestEnabled": true,
+				"python.linting.mypyEnabled": true
+			}
+		}
+	},
+	"postCreateCommand": "pip install --upgrade pip && pip install black mypy pytest"
 }
