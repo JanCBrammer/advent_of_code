@@ -2,25 +2,27 @@
 // For config options, see the README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
     "name": "Advent of Code",
-    "image": "mcr.microsoft.com/devcontainers/python:3.11",
+    "image": "mcr.microsoft.com/devcontainers/python:3.12",
     "customizations": {
         "vscode": {
             "extensions": [
                 "ms-python.python",
                 "ms-python.vscode-pylance",
+                "ms-python.black-formatter",
+                "ms-python.mypy-type-checker",
+                "ms-python.flake8",
                 "KevinRose.vsc-python-indent",
                 "streetsidesoftware.code-spell-checker",
+                "eamodio.gitlens",
                 "GitHub.copilot"
             ],
             "settings": {
                 "editor.formatOnSave": true,
-                "editor.formatOnSaveMode": "file",
-                "python.formatting.provider": "black",
                 "python.testing.unittestEnabled": false,
                 "python.testing.pytestEnabled": true,
-                "python.linting.mypyEnabled": true
+                "python.editor.defaultFormatter": "ms-python.black-formatter"
             }
         }
     },
-    "postCreateCommand": "pip install --upgrade pip && pip install black mypy pytest"
+    "postCreateCommand": "pip install --upgrade pip && pip install pytest"
 }
