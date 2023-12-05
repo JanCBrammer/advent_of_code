@@ -1,11 +1,11 @@
-Run tests for a specific day with
+Run a solution with
 ```bash
-pytest day<int><int>
+python year<year>/day<day>/solution.py
 ```
 
-and the solution with
+and the corresponding tests with
 ```bash
-python -m day<int><int>.solution
+pytest year<year>/day<day>
 ```
 
-`day00` contains a template module.
+`day00` is a template.
