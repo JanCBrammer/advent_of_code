@@ -12,5 +12,4 @@ from . import solution
     ],
 )
 def test_look_and_say(initial_sequence: str, final_sequence: str):
-
     assert solution.play_look_and_say(initial_sequence) == final_sequence

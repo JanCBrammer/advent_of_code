@@ -25,7 +25,6 @@ import hashlib
 
 
 def solve(secret_key: str, prefix: str) -> int:
-
     salt = 0
     result = "0"
     while not result.startswith(prefix):
@@ -39,6 +38,5 @@ def solve(secret_key: str, prefix: str) -> int:
 
 
 if __name__ == "__main__":
-
     print(f"Part 1:\nThe salt is {solve('bgvyzdsv', '00000')}!\n")
     print(f"Part 2:\nThe salt is {solve('bgvyzdsv', '000000')}!\n")

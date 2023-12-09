@@ -9,5 +9,4 @@ from . import solution
     ],
 )
 def test_find_bar(foo: str, bar: int):
-
     assert solution.find_bar(foo) == bar

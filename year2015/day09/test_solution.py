@@ -22,15 +22,12 @@ def city_distances():
 def test_compute_path_length(
     cities: list[str], path_length: int, city_distances: dict[str, dict[str, int]]
 ):
-
     assert solution.compute_path_length(cities, city_distances) == path_length
 
 
 def test_find_shortest_path(city_distances: dict[str, dict[str, int]]):
-
     assert solution.find_extreme_path(city_distances, float("inf"), min) == 605
 
 
 def test_find_longest_path(city_distances: dict[str, dict[str, int]]):
-
     assert solution.find_extreme_path(city_distances, float("0"), max) == 982

@@ -11,5 +11,4 @@ from . import solution
     ],
 )
 def test_match_aunt(aunt_attributes: dict[str, int], match: bool):
-
     assert solution.match_aunt(aunt_attributes) == match

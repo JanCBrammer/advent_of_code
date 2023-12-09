@@ -65,7 +65,6 @@ def increment_password(password: str) -> str:
 
 
 def password_is_valid(password: str) -> bool:
-
     if any(letter in password for letter in ["i", "o", "l"]):
         return False
 
@@ -89,7 +88,6 @@ def password_is_valid(password: str) -> bool:
 
 
 def solve(password: str) -> str:
-
     updated_password = increment_password(password)
 
     while not password_is_valid(updated_password):
@@ -99,6 +97,5 @@ def solve(password: str) -> str:
 
 
 if __name__ == "__main__":
-
     print(f"Part 1:\nSanta, your new password is {solve('hepxcrrq')}!\n")
     print(f"Part 2:\nSanta, your new password is {solve('hepxxyzz')}!\n")

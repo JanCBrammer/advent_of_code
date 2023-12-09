@@ -13,7 +13,6 @@ from . import solution
     ],
 )
 def test_increment_password(password: str, incremented_password: str):
-
     assert solution.increment_password(password) == incremented_password
 
 
@@ -32,5 +31,4 @@ def test_increment_password(password: str, incremented_password: str):
     ],
 )
 def test_password_is_valid(password: str, valid: bool):
-
     assert solution.password_is_valid(password) == valid

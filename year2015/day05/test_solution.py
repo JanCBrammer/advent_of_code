@@ -13,7 +13,6 @@ from . import solution
     ],
 )
 def test_string_is_nice_part1(string: str, nice: bool):
-
     assert solution.string_is_nice(string, solution.RULES_PART1) == nice
 
 
@@ -27,7 +26,6 @@ def test_string_is_nice_part1(string: str, nice: bool):
     ],
 )
 def test_string_is_nice_part2(string: str, nice: bool):
-
     assert solution.string_is_nice(string, solution.RULES_PART2) == nice
 
 
@@ -42,7 +40,6 @@ def test_string_is_nice_part2(string: str, nice: bool):
     ],
 )
 def test_string_contains_repeated_letter(string: str, nice: bool):
-
     assert solution.string_contains_repeated_letter(string) == nice
 
 
@@ -57,7 +54,6 @@ def test_string_contains_repeated_letter(string: str, nice: bool):
     ],
 )
 def test_string_contains_vowels(string: str, nice: bool):
-
     assert solution.string_contains_vowels(string) == nice
 
 
@@ -72,7 +68,6 @@ def test_string_contains_vowels(string: str, nice: bool):
     ],
 )
 def test_string_free_of_forbidden_substring(string: str, nice: bool):
-
     assert solution.string_free_of_forbidden_substrings(string) == nice
 
 
@@ -87,7 +82,6 @@ def test_string_free_of_forbidden_substring(string: str, nice: bool):
     ],
 )
 def test_string_contains_repeated_letter_pair(string: str, nice: bool):
-
     assert solution.string_contains_repeated_letter_pair(string) == nice
 
 
@@ -103,5 +97,4 @@ def test_string_contains_repeated_letter_pair(string: str, nice: bool):
     ],
 )
 def test_string_contains_separated(string: str, nice: bool):
-
     assert solution.string_contains_separated_repeated_letter(string) == nice

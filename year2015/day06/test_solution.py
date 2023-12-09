@@ -23,7 +23,6 @@ def light_grid_varying_brightness():
 
 
 def test_turn_lights_on(light_grid_all_off):
-
     mode = "on"
     coordinates = ((1, 0), (2, 1))
 
@@ -35,7 +34,6 @@ def test_turn_lights_on(light_grid_all_off):
 
 
 def test_turn_lights_off(light_grid_all_on):
-
     mode = "off"
     coordinates = ((1, 1), (1, 1))
 
@@ -47,7 +45,6 @@ def test_turn_lights_off(light_grid_all_on):
 
 
 def test_toggle_lights(light_grid_partly_on):
-
     mode = "toggle"
     coordinates = ((1, 1), (2, 2))
 
@@ -59,7 +56,6 @@ def test_toggle_lights(light_grid_partly_on):
 
 
 def test_count_lit_light(light_grid_partly_on):
-
     mode = "toggle"
     coordinates = ((1, 1), (2, 2))
 
@@ -70,7 +66,6 @@ def test_count_lit_light(light_grid_partly_on):
 
 
 def test_final_brightness(light_grid_varying_brightness):
-
     mode = "off"
     coordinates = ((0, 0), (1, 1))
 

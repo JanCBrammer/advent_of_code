@@ -11,7 +11,6 @@ from . import solution
 def test_find_container_combinations(
     containers: tuple[int, ...], container_combinations: list[tuple[int, ...]]
 ):
-
     assert (
         solution.find_container_combinations(containers, 25) == container_combinations
     )

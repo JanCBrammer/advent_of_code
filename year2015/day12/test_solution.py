@@ -17,7 +17,6 @@ from . import solution
     ],
 )
 def test_add_numbers(document: str, document_sum: int):
-
     assert solution.add_numbers(document) == document_sum
 
 
@@ -31,7 +30,6 @@ def test_add_numbers(document: str, document_sum: int):
     ],
 )
 def test_add_numbers_conditionally(document: str, document_sum: int):
-
     json_document = json.loads(document)
 
     assert sum(solution.add_numbers_conditionally(json_document)) == document_sum

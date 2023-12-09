@@ -23,7 +23,6 @@ def test_compute_happiness(
     happiness_changes: dict[str, dict[str, int]],
     happiness_change: int,
 ):
-
     assert (
         solution.compute_happiness(seating_arrangement, happiness_changes)
         == happiness_change
@@ -31,5 +30,4 @@ def test_compute_happiness(
 
 
 def test_find_optimal_seating_arrangement(happiness_changes: dict[str, dict[str, int]]):
-
     assert solution.find_optimal_seating_arrangement(happiness_changes) == 330

@@ -43,18 +43,15 @@ from . import solution
     ],
 )
 def test_map_light_neighbors(n_cols: int, light_neighbors: dict[int, tuple[int, ...]]):
-
     assert solution.map_light_neighbors(n_cols, n_cols) == light_neighbors
 
 
 @pytest.fixture
 def lights() -> tuple[bool, ...]:
-
     return tuple(light == "#" for light in ".#.#.#...##.#....#..#...#.#..#####..")
 
 
 def test_update_lights(lights: tuple[bool, ...]):
-
     LIGHT_NEIGHBORS = solution.map_light_neighbors(6, 6)
 
     for _ in range(4):
@@ -67,7 +64,6 @@ def test_update_lights(lights: tuple[bool, ...]):
 
 
 def test_update_lights_corners_on(lights: tuple[bool, ...]):
-
     LIGHT_NEIGHBORS = solution.map_light_neighbors(6, 6)
     lights = solution.switch_on_grid_corners(lights, 6, 6)
 

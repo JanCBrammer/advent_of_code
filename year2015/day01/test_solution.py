@@ -17,7 +17,6 @@ from . import solution
     ],
 )
 def test_find_floor(directions: str, floor: int):
-
     assert solution.find_floor(directions) == floor
 
 
@@ -26,5 +25,4 @@ def test_find_floor(directions: str, floor: int):
     [(")", 1), ("()())", 5)],
 )
 def test_find_basement_entrance_direction(directions: str, position: int):
-
     assert solution.find_basement_entrance_direction(directions) == position

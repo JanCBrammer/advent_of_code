@@ -11,7 +11,6 @@ from . import solution
     ],
 )
 def test_track_visited_houses(directions: str, visited_houses: set[tuple[int, int]]):
-
     assert solution.track_visited_houses(directions) == visited_houses
 
 
@@ -41,5 +40,4 @@ def test_track_visited_houses(directions: str, visited_houses: set[tuple[int, in
 def test_track_visited_houses_robosanta(
     directions: str, visited_houses: set[tuple[int, int]]
 ):
-
     assert solution.track_visited_houses_robosanta(directions) == visited_houses

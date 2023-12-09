@@ -25,7 +25,6 @@ def reindeer_performance_data():
 def test_compute_covered_distance(
     reindeer_performance_data: dict[str, dict[str, int]], reindeer: str, distance: int
 ):
-
     assert (
         solution.compute_covered_distance(1000, reindeer_performance_data[reindeer])
         == distance
@@ -33,5 +32,4 @@ def test_compute_covered_distance(
 
 
 def test_compute_winning_points(reindeer_performance_data: dict[str, dict[str, int]]):
-
     assert solution.compute_winning_points(1000, reindeer_performance_data) == 689

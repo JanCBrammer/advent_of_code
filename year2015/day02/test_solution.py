@@ -12,7 +12,6 @@ from . import solution
 def test_compute_wrapping_paper_area(
     present_dimensions: list[int], wrapping_paper_area: int
 ):
-
     assert (
         solution.compute_wrapping_paper_area(present_dimensions) == wrapping_paper_area
     )
@@ -26,5 +25,4 @@ def test_compute_wrapping_paper_area(
     ],
 )
 def test_compute_ribbon_length(present_dimensions: list[int], ribbon_length: int):
-
     assert solution.compute_ribbon_length(present_dimensions) == ribbon_length

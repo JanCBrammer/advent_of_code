@@ -13,5 +13,4 @@ from . import solution
     ],
 )
 def test_count_chars(line: str, char_count: namedtuple):
-
     assert solution.count_chars(line) == char_count

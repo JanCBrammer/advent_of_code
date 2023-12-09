@@ -39,7 +39,6 @@ def ingredient_properties():
 def test_teaspoon_compositions(
     n_ingredients: int, n_tablespoons: int, compositions: list[tuple[int, ...]]
 ):
-
     assert (
         list(solution.compose_teaspoons(n_ingredients, n_tablespoons)) == compositions
     )
@@ -54,7 +53,6 @@ def test_teaspoon_compositions(
     ],
 )
 def test_number_of_teaspoon_compositions(n_ingredients: int, n_tablespoons: int):
-
     assert len(list(solution.compose_teaspoons(n_ingredients, n_tablespoons))) == comb(
         n_ingredients + n_tablespoons - 1, n_tablespoons
     )
@@ -72,7 +70,6 @@ def test_number_of_teaspoon_compositions(n_ingredients: int, n_tablespoons: int)
 def test_compute_cookie_property_score(
     ingredient_properties: tuple[int, int], property_score: int
 ):
-
     assert (
         solution.compute_cookie_property_score((44, 56), ingredient_properties)
         == property_score
@@ -95,7 +92,6 @@ def test_compute_cookie_score_with_calorie_constraints(
 
 
 def test_find_max_cookie_score(ingredient_properties: list[tuple[int, ...]]):
-
     assert (
         solution.find_max_cookie_score(
             ingredient_properties, 2, 100, solution.compute_cookie_score
@@ -107,7 +103,6 @@ def test_find_max_cookie_score(ingredient_properties: list[tuple[int, ...]]):
 def test_find_max_cookie_score_with_calorie_constraint(
     ingredient_properties: list[tuple[int, ...]]
 ):
-
     assert (
         solution.find_max_cookie_score(
             ingredient_properties,

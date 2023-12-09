@@ -18,7 +18,6 @@ from . import solution
     ],
 )
 def test_parse_operation(operation: str, parsed_operation: dict[dict]):
-
     assert solution.parse_operation(operation) == parsed_operation
 
 
@@ -36,7 +35,6 @@ def test_parse_operation(operation: str, parsed_operation: dict[dict]):
     ],
 )
 def test_compute_operation(operands: tuple[int], operator: callable, result: int):
-
     assert operator(*operands) == result
 
 
@@ -73,5 +71,4 @@ def circuit():
     ],
 )
 def test_compute_wire_input(circuit, wire, result):
-
     assert solution.compute_wire_input(wire, circuit) == result

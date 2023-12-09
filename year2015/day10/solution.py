@@ -42,7 +42,6 @@ from itertools import groupby
 
 
 def play_look_and_say(sequence: str) -> str:
-
     final_sequence = ""
     for digit, digit_segment in groupby(sequence):
         final_sequence += f"{len(list(digit_segment))}{digit}"
@@ -70,7 +69,6 @@ def play_look_and_say(sequence: str) -> str:
 
 
 def solve(sequence: str, n_rounds: int) -> int:
-
     for _ in range(n_rounds):
         sequence = play_look_and_say(sequence)
 
@@ -78,7 +76,6 @@ def solve(sequence: str, n_rounds: int) -> int:
 
 
 if __name__ == "__main__":
-
     print(
         f"Part 1:\nAfter 40 iterations, the length of the sequence is {solve('1113222113', 40)}.\n"
     )

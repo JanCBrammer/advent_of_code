@@ -10,5 +10,4 @@ from . import solution
     ],
 )
 def test_solve_part1(secret_key: str, salt: int):
-
     assert solution.solve(secret_key, "00000") == salt
