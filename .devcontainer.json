@@ -1,26 +1,31 @@
 // For format details, see https://containers.dev/implementors/json_reference/.
-// For config options, see the README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
     "name": "Advent of Code",
-    "image": "mcr.microsoft.com/devcontainers/python:3.12",
+    "image": "python:3.13",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "configureZshAsDefaultShell": true
+        }
+    },
     "customizations": {
         "vscode": {
             "extensions": [
                 "ms-python.python",
                 "ms-python.vscode-pylance",
-                "ms-python.black-formatter",
                 "ms-python.mypy-type-checker",
-                "ms-python.flake8",
                 "KevinRose.vsc-python-indent",
                 "streetsidesoftware.code-spell-checker",
                 "eamodio.gitlens",
-                "GitHub.copilot"
+                "GitHub.copilot",
+                "charliermarsh.ruff"
             ],
             "settings": {
-                "editor.formatOnSave": true,
+                "[python]": {
+                    "editor.formatOnSave": true,
+                    "editor.defaultFormatter": "charliermarsh.ruff"
+                },
                 "python.testing.unittestEnabled": false,
-                "python.testing.pytestEnabled": true,
-                "python.editor.defaultFormatter": "ms-python.black-formatter"
+                "python.testing.pytestEnabled": true
             }
         }
     },
